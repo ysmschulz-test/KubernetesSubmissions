@@ -8,9 +8,16 @@ const interval = setInterval(() => {
 }, 5000);
 
 const app = express();
+
+app.get("/status", (req, res) => {
+    res.status(200).json({
+        timestamp: new Date().toISOString(), 
+        randomString: crypto.randomBytes(16).toString('hex')
+    });
+});
+
 const server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
-
 })
 
 function shutDown(signal) {
