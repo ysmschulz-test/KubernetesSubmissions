@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-app
+  name: exercise-1-1
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: todo-app
+      app: exercise-1-1
   template:
     metadata:
       labels:
-        app: todo-app
+        app: exercise-1-1
     spec:
       containers:
-        - name: todo-app
-          image: ysmschulz/todo_app:v1.0
+        - name: exercise-1-1
+          image: ysmschulz/exercise-1-1:v1.0
